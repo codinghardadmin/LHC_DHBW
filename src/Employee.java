@@ -1,7 +1,7 @@
 public abstract class Employee extends Person {
 
-    private boolean isManager;
-    private boolean isMentor;
-    private boolean hasBudgetResponsibility;
+    protected boolean isManager;
+    protected boolean isMentor;
+    protected boolean hasBudgetResponsibility;
 
 }

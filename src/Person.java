@@ -1,7 +1,7 @@
 public abstract class Person {
 
-    private int id;
-    private String name;
-    private int[][] iris = new int[10][10];
+    protected int id;
+    protected String name;
+    protected int[][] iris = new int[10][10];
 
 }
