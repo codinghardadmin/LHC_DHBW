@@ -12,7 +12,7 @@ public enum Management {
     private HashMap<Integer, Employee> employeeMap;
     private HashMap<Integer, IDCard> idCardHashMap;
 
-    public void createEmployee(String name) {
+    public void createEmployee(String name, String type) {
 
     }
 
