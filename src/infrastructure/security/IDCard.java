@@ -1,11 +1,11 @@
 package infrastructure.security;
 
-import infrastructure.security.Permission;
+import infrastructure.IEncryption;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class IDCard {
+public abstract class IDCard {
 
     private String id;
     private Date validFrom;
@@ -13,4 +13,5 @@ public class IDCard {
     private int[][] irisStructure = new int[10][10];
     private ArrayList<Permission> permissionList;
     private boolean isLocked;
+    protected IEncryption encryption;
 }

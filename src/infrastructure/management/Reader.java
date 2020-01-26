@@ -4,7 +4,7 @@ import human_resources.Employee;
 import infrastructure.security.IDCard;
 import infrastructure.security.Passport;
 
-public class Reader {
+public class Reader implements IReader {
 
     private String currentEmployeeIris;
 

@@ -1,12 +1,9 @@
 package infrastructure;
 
-public enum ControlCenter {
+public enum IDCardManagement {
     instance;
 
     public void create() {
 
     }
-
-    private String roomID = "C01";
-
 }
