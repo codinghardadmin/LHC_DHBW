@@ -1,7 +1,7 @@
-package infrastructure;
+package infrastructure.security;
 
 import human_resources.Employee;
-import infrastructure.security.NewEmployeeIDCard;
+import human_resources.IROEmployee;
 
 public enum SecurityCentre {
     instance;
@@ -14,5 +14,6 @@ public enum SecurityCentre {
     }
 
     public void lock(NewEmployeeIDCard newCard) {
+        newCard.setLocked(true);
     }
 }

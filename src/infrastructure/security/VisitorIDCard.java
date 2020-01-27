@@ -1,7 +1,6 @@
 package infrastructure.security;
 
 import human_resources.Visitor;
-import infrastructure.IEncryption;
 
 import java.util.ArrayList;
 import java.util.Date;

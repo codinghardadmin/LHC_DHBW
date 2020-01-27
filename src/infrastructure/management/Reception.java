@@ -1,10 +1,7 @@
-package infrastructure;
+package infrastructure.management;
 
 import human_resources.Visitor;
-import infrastructure.security.Chip;
-import infrastructure.security.IDCard;
-import infrastructure.security.Permission;
-import infrastructure.security.VisitorIDCard;
+import infrastructure.security.*;
 
 import java.util.ArrayList;
 import java.util.Date;

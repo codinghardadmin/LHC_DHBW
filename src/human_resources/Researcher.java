@@ -1,6 +1,6 @@
 package human_resources;
 
-import infrastructure.IRODetector;
+import lhc.IRODetector;
 
 public class Researcher extends Employee {
 

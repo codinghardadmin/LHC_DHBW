@@ -1,11 +1,9 @@
 import human_resources.*;
-import infrastructure.Reception;
-import infrastructure.SecurityCentre;
+import infrastructure.management.Reception;
+import infrastructure.security.SecurityCentre;
 import infrastructure.management.CardReader;
 import infrastructure.management.IReader;
-import infrastructure.security.IDCard;
 import infrastructure.security.NewEmployeeIDCard;
-import infrastructure.security.Permission;
 import infrastructure.security.VisitorIDCard;
 import lhc.Detector;
 

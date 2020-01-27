@@ -1,4 +1,4 @@
-package infrastructure;
+package lhc;
 
 import infrastructure.experiment.Experiment;
 

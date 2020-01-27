@@ -1,7 +1,5 @@
 package infrastructure.security;
 
-import infrastructure.IEncryption;
-
 import java.util.ArrayList;
 import java.util.Date;
 

@@ -1,6 +1,5 @@
 package lhc;
 
-import infrastructure.IRODetector;
 import infrastructure.experiment.Experiment;
 
 import java.io.Reader;
