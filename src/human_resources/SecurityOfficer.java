@@ -4,7 +4,8 @@ public class SecurityOfficer extends Employee {
 
     private boolean hasWeapon;
 
-    public SecurityOfficer(boolean hasWeapon) {
+    public SecurityOfficer(boolean hasWeapon, int id, String name, int[][] iris) {
+        super(id, name, iris);
         this.hasWeapon = hasWeapon;
     }
 

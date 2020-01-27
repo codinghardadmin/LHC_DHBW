@@ -4,7 +4,8 @@ import infrastructure.IRODetector;
 
 public class Researcher extends Employee {
 
-    public Researcher(boolean isSenior, IRODetector detector) {
+    public Researcher(boolean isSenior, IRODetector detector, int id, String name, int[][] iris) {
+        super(id, name, iris);
         this.isSenior = isSenior;
         this.detector = detector;
     }

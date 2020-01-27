@@ -12,4 +12,7 @@ public enum SecurityCentre {
 
         return null;
     }
+
+    public void lock(NewEmployeeIDCard newCard) {
+    }
 }

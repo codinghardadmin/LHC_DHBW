@@ -5,17 +5,20 @@ import infrastructure.management.CardReader;
 import infrastructure.management.IReader;
 import infrastructure.security.IDCard;
 import infrastructure.security.NewEmployeeIDCard;
+import infrastructure.security.Permission;
 import infrastructure.security.VisitorIDCard;
+import lhc.Detector;
 
 public class Application {
     public static void main(String[] args) {
 
         // Erstellung einer ID-Karte für Besucher durch die Rezeption
-        Visitor visitor = new Visitor();
-        VisitorIDCard card = Reception.instance.create(visitor);
+        Visitor visitor = new Visitor(0, "Name", new int[10][10]);
+        VisitorIDCard card = Reception.instance.create(visitor, null, null, null, null, null, false, null, null, null);
 
         // Erstellung einer ID-Karte für Mitarbeiter durch Security
-        Employee employee = new SecurityOfficer();
+        Employee employee;
+        employee = new SecurityOfficer(false, 1, null, new int[10][10]);
         NewEmployeeIDCard newCard = SecurityCentre.instance.create(employee);
 
         // Reader prüft Zutritt für einen Besucher
@@ -27,10 +30,11 @@ public class Application {
         IReader reader2 = new CardReader();
 
         // Forscher greift lesend auf die im Detektor gespeicherten Experimente zu
-        Employee researcher = new Researcher();
+        Detector detector = new Detector();
+        Employee researcher = new Researcher(false, detector, 2, null, new int[10][10]);
 
         // HRAssistant hat lesenden Zugriff auf die Daten der Mitarbeiter
-        HumanResourcesDepartment hrassistant = new HRAssistant();
+        HumanResourcesDepartment hrassistant = new HRAssistant(null);
 
         // Security Centre sperrt eine ID-Karte
         SecurityCentre.instance.lock(newCard);

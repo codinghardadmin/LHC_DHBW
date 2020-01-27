@@ -4,7 +4,8 @@ import java.util.Date;
 
 public class ScientificAssistant extends Employee {
 
-    public ScientificAssistant(Date periodFrom, Date periodUntil) {
+    public ScientificAssistant(Date periodFrom, Date periodUntil, int id, String name, int[][] iris) {
+        super(id, name, iris);
         this.periodFrom = periodFrom;
         this.periodUntil = periodUntil;
     }
