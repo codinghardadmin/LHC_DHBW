@@ -12,11 +12,17 @@ public enum Reception {
     private Map<Visitor, IDCard> visitorList;
 
     public VisitorIDCard create(Visitor visitor) {
-        visitorList.put(visitor, new VisitorIDCard());
-        return null;
+        VisitorIDCard idCard = new VisitorIDCard();
+        visitorList.put(visitor, idCard);
+        return idCard;
     }
 
     public void lock(Visitor visitor) {
-        visitorList.get(visitor)
+        IDCard card = visitorList.get(visitor);
+        card.setLocked(true);
+    }
+
+    public void lock(IDCard idcard) {
+        idcard.setLocked(true);
     }
 }

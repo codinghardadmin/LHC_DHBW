@@ -10,7 +10,6 @@ public class TouchpadReader implements IReader {
 
     }
 
-    @Override
     public String read() {
         return null;
     }
