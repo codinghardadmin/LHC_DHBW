@@ -14,6 +14,6 @@ public enum SecurityCentre {
     }
 
     public void lock(NewEmployeeIDCard newCard) {
-        newCard.setLocked(true);
+        //newCard.setLocked(true);
     }
 }

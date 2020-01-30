@@ -5,12 +5,13 @@ import infrastructure.security.*;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public enum Reception {
     instance;
 
-    private Map<Visitor, IDCard> visitorList;
+    private Map<Visitor, IDCard> visitorList = new HashMap<Visitor, IDCard>();
 
     public VisitorIDCard create(Visitor visitor, String id, Date validFrom, Date validUntil, int[][] irisStructure, ArrayList<Permission> permissionList, boolean isLocked, IEncryption encryption, Chip chip, String password) {
         VisitorIDCard idCard = new VisitorIDCard(id, validFrom, validUntil, irisStructure, permissionList, isLocked, encryption, chip, password, visitor);

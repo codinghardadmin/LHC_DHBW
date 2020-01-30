@@ -10,6 +10,7 @@ public abstract class IDCard {
     private Date validUntil;
     private int[][] irisStructure = new int[10][10];
     private ArrayList<Permission> permissionList;
+    private boolean isLocked = false;
 
     public IDCard(String id, Date validFrom, Date validUntil, int[][] irisStructure, ArrayList<Permission> permissionList, boolean isLocked, IEncryption encryption) {
         this.id = id;
@@ -77,6 +78,5 @@ public abstract class IDCard {
         return encryption;
     }
 
-    private boolean isLocked;
     protected IEncryption encryption;
 }

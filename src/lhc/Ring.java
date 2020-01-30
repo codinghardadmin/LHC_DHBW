@@ -1,6 +1,10 @@
 package lhc;
 
+import com.google.common.eventbus.Subscribe;
 import infrastructure.experiment.Experiment;
+import infrastructure.management.Analyse;
+import infrastructure.management.RunExperimentFull;
+import infrastructure.management.RunExperimentPartial;
 
 public class Ring {
 
@@ -37,6 +41,16 @@ public class Ring {
     }
 
     public void shutdown() {
+
+    }
+
+    @Subscribe
+    public void receive(RunExperimentFull experimentFull) {
+
+    }
+
+    @Subscribe
+    public void receive(RunExperimentPartial experimentPartial) {
 
     }
 

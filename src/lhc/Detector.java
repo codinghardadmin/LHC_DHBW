@@ -1,6 +1,8 @@
 package lhc;
 
+import com.google.common.eventbus.Subscribe;
 import infrastructure.experiment.Experiment;
+import infrastructure.management.Analyse;
 
 import java.io.Reader;
 import java.util.LinkedList;
@@ -15,5 +17,10 @@ public class Detector implements IRODetector {
     @Override
     public LinkedList<Experiment> getExperimentList() {
         return this.experimentList;
+    }
+
+    @Subscribe
+    public void receive(Analyse analyse) {
+
     }
 }
