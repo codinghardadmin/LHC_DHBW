@@ -8,12 +8,13 @@ public enum ControlCenter {
     instance;
 
     private EventBus eventBus;
+    private String roomID = "C01";
 
     ControlCenter() {
         eventBus = new EventBus("ControlCenter");
     }
 
-    public void addSubscriber(Flow.Subscriber subscriber) {
+    public void addSubscriber(Subscriber subscriber) {
         eventBus.register(subscriber);
     }
 
@@ -36,8 +37,6 @@ public enum ControlCenter {
     public void create() {
 
     }
-
-    private String roomID = "C01";
 
     public String getRoomID() {
         return roomID;

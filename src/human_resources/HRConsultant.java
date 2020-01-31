@@ -1,18 +1,8 @@
 package human_resources;
 
-public class HRConsultant implements HumanResourcesDepartment {
+public class HRConsultant extends Employee {
 
-    private IEmployee employee;
-
-    public HRConsultant(IEmployee employee) {
-        this.employee = employee;
-    }
-
-    public IEmployee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(IEmployee employee) {
-        this.employee = employee;
+    public HRConsultant(int id, String name, int[][] iris) {
+        super(id, name, iris);
     }
 }

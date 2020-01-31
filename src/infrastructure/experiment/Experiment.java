@@ -8,10 +8,15 @@ public class Experiment {
     private String dateTimeStamp;
     private boolean isHiggsBosonFound;
 
+    private Block[] blocks = new Block[200000];
+
     public Experiment(UUID uuid, String dateTimeStamp, boolean isHiggsBosonFound) {
         this.uuid = uuid;
         this.dateTimeStamp = dateTimeStamp;
         this.isHiggsBosonFound = isHiggsBosonFound;
+        for (int i = 0; i < blocks.length; i++) {
+            blocks[i] = new Block(UUID.randomUUID(), "");
+        }
     }
 
     public UUID getUuid() {
@@ -36,5 +41,13 @@ public class Experiment {
 
     public void setHiggsBosonFound(boolean higgsBosonFound) {
         isHiggsBosonFound = higgsBosonFound;
+    }
+
+    public void setBlocks(Block[] blocks) {
+        this.blocks = blocks;
+    }
+
+    public Block[] getBlocks() {
+        return blocks;
     }
 }

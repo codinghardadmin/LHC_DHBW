@@ -1,4 +1,4 @@
 package human_resources;
 
-public interface IEmployee {
+public interface IEmployee extends IROEmployee {
 }

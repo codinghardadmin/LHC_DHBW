@@ -1,13 +1,15 @@
 package infrastructure;
 
+import lhc.LargeHadronCollider;
+
 public class Building {
 
     private String owner = "CERN";
     private String location = "Geneva";
+    private LargeHadronCollider lhc;
 
-    public Building(String owner, String location) {
-        this.owner = owner;
-        this.location = location;
+    public Building(LargeHadronCollider lhc) {
+        this.lhc = lhc;
     }
 
     public String getOwner() {

@@ -1,16 +1,20 @@
 package infrastructure.management;
 
+import human_resources.Employee;
+import infrastructure.security.IDCard;
+
+import java.util.HashMap;
+
 public enum EmployeeManagement {
     instance;
 
-    public void create() {
+    private HashMap<Integer, Employee> employeeMap;
+
+    public void createEmployee(String name, String type) {
 
     }
 
-    // Genau so wie IDCardManagement
-    // Reception
-    // ControlCenter
-    // SecurityCenter
-
-    // Alle Enum
+    public void assignIDCard(IDCard idCard, Employee employee) {
+        employee.setIdcard(idCard);
+    }
 }

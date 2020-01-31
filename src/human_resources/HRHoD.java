@@ -1,18 +1,8 @@
 package human_resources;
 
-public class HRHoD implements HumanResourcesDepartment {
+public class HRHoD extends Employee {
 
-    private IEmployee employee;
-
-    public HRHoD(IEmployee employee) {
-        this.employee = employee;
-    }
-
-    public IEmployee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(IEmployee employee) {
-        this.employee = employee;
+    public HRHoD(int id, String name, int[][] iris) {
+        super(id, name, iris);
     }
 }

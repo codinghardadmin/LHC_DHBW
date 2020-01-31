@@ -4,6 +4,9 @@ import java.util.Date;
 
 public class ScientificAssistant extends Employee {
 
+    private Date periodFrom;
+    private Date periodUntil;
+
     public ScientificAssistant(Date periodFrom, Date periodUntil, int id, String name, int[][] iris) {
         super(id, name, iris);
         this.periodFrom = periodFrom;
@@ -25,8 +28,5 @@ public class ScientificAssistant extends Employee {
     public Date getPeriodUntil() {
         return periodUntil;
     }
-
-    private Date periodFrom;
-    private Date periodUntil;
 
 }

@@ -1,3 +1,6 @@
+package application;
+
+import infrastructure.management.SearchAlgorithm;
 import infrastructure.security.Keystore;
 
 public class Configuration {

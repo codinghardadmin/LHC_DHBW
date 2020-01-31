@@ -5,12 +5,26 @@ import infrastructure.experiment.Experiment;
 import infrastructure.management.Analyse;
 import infrastructure.management.RunExperimentFull;
 import infrastructure.management.RunExperimentPartial;
+import infrastructure.management.Subscriber;
 
-public class Ring {
+public class Ring extends Subscriber {
 
     private boolean isActivated;
     private Experiment currentExperiment;
     private int energy;
+    private ProtonTrap[] protonTraps = new ProtonTrap[2];
+    private Detector detector;
+
+    private Magnet[] magnets = new Magnet[72];
+
+    public Ring(ProtonTrap[] protonTraps, Detector detector) {
+        for (int i = 0; i < magnets.length; i++) {
+            magnets[i] = new Magnet();
+        }
+
+        this.protonTraps = protonTraps;
+        this.detector = detector;
+    }
 
     public void activate() {
 

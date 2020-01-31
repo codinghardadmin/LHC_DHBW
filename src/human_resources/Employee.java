@@ -1,10 +1,14 @@
 package human_resources;
 
+import infrastructure.security.IDCard;
+
 public abstract class Employee extends Person {
 
     protected boolean isManager;
     protected boolean isMentor;
     protected boolean hasBudgetResponsibility;
+
+    private IDCard idcard;
 
     public Employee(int id, String name, int[][] iris) {
         super(id, name, iris);

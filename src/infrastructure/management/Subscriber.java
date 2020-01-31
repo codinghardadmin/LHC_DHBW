@@ -1,4 +1,4 @@
 package infrastructure.management;
 
-public class Subscriber {
+public abstract class Subscriber {
 }
