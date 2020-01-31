@@ -1,15 +1,12 @@
-import human_resources.*;
+package application;
+
+import human_resources.Visitor;
 import infrastructure.management.Reception;
-import infrastructure.security.SecurityCentre;
-import infrastructure.management.CardReader;
-import infrastructure.management.IReader;
-import infrastructure.security.NewEmployeeIDCard;
 import infrastructure.security.VisitorIDCard;
-import lhc.Detector;
 
 public class Application {
     public static void main(String[] args) {
-
+        /*
         // Erstellung einer ID-Karte für Besucher durch die Rezeption
         Visitor visitor = new Visitor(0, "Name", new int[10][10]);
         VisitorIDCard card = Reception.instance.create(visitor, null, null, null, null, null, false, null, null, null);
@@ -36,7 +33,7 @@ public class Application {
 
         // Security Centre sperrt eine ID-Karte
         SecurityCentre.instance.lock(newCard);
-
+        */
 
 
 
@@ -92,6 +89,10 @@ public class Application {
         Die Rollen HRHOD und HRConsultant haben schreibenden, der HRAssistant
         lesenden Zugriff aufdie Daten der Mitarbeiter.
          */
+
+        // Erstellung einer ID-Karte für Besucher durch die Rezeption
+        Visitor visitor = new Visitor(0, "Name", new int[10][10]);
+        VisitorIDCard card = Reception.instance.create(visitor, null, null, null, null, null, false, null, null, null);
 
     }
 }
