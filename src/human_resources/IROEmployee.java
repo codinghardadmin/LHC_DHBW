@@ -2,10 +2,10 @@ package human_resources;
 
 public interface IROEmployee {
 
-    public boolean isManager();
+    boolean isManager();
 
-    public boolean isMentor();
+    boolean isMentor();
 
-    public boolean isHasBudgetResponsibility();
+    boolean isHasBudgetResponsibility();
 
 }

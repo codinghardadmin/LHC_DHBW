@@ -2,16 +2,19 @@ package human_resources;
 
 import infrastructure.security.IDCard;
 
-public abstract class Employee extends Person {
+public abstract class Employee extends Person implements IROEmployee {
 
-    protected boolean isManager;
-    protected boolean isMentor;
-    protected boolean hasBudgetResponsibility;
+    protected boolean isManager = false;
+    protected boolean isMentor = false;
+    protected boolean hasBudgetResponsibility = false;
 
     private IDCard idcard;
 
     public Employee(int id, String name, int[][] iris) {
         super(id, name, iris);
+        this.isManager = false;
+        this.isMentor = false;
+        this.hasBudgetResponsibility = false;
     }
 
     public void setManager(boolean manager) {

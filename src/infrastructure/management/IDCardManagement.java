@@ -14,7 +14,7 @@ public enum IDCardManagement {
 
     private HashMap<Integer, IDCard> idCardHashMap;
     private static int ids = 1;
-    private IrisScanner scanner;
+    private IrisScanner scanner = new IrisScanner();
 
     public VisitorIDCard createBlankIdCard() {
         ids++;
@@ -74,7 +74,8 @@ public enum IDCardManagement {
     }
 
     public boolean checkPassword(VisitorIDCard card, String password) {
-        if (new AESEncryption().encrypt(password).equals(card.getChip().getPassword())) {
+        String cardpw = card.getChip().getPassword();
+        if (new AESEncryption().encrypt(password).equals(cardpw)) {
             return true;
         }
         return false;

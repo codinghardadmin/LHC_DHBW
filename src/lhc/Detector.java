@@ -17,7 +17,7 @@ public class Detector extends Subscriber implements IRODetector {
 
     private static String higgsBosonStructure = "higgs";
     private boolean isActivated;
-    private LinkedList<Experiment> experimentList;
+    private LinkedList<Experiment> experimentList = new LinkedList<>();
     private Reader reader;
 
     @Override

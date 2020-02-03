@@ -13,6 +13,6 @@ public class HRAssistant extends Employee {
     }
 
     public void setEmployeeToRead(Employee employee) {
-
+        this.employee = employee;
     }
 }
