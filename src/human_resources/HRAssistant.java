@@ -2,7 +2,17 @@ package human_resources;
 
 public class HRAssistant extends Employee {
 
-    public HRAssistant(int id, String name, int[][] iris) {
-        super(id, name, iris);
+    private IROEmployee employee;
+
+    public HRAssistant(String name) {
+        super(50, name, new int[10][10]);
+    }
+
+    public IROEmployee readEmployee() {
+        return employee;
+    }
+
+    public void setEmployeeToRead(Employee employee) {
+
     }
 }

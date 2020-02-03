@@ -1,5 +1,6 @@
 package infrastructure.management;
 
+import human_resources.Employee;
 import human_resources.Visitor;
 import infrastructure.security.*;
 
@@ -12,19 +13,13 @@ public enum Reception {
     instance;
 
     private Map<Visitor, IDCard> visitorList = new HashMap<Visitor, IDCard>();
+    private ReceptionStaff receptionStaff = new ReceptionStaff();
 
-    public VisitorIDCard create(Visitor visitor, String id, Date validFrom, Date validUntil, int[][] irisStructure, ArrayList<Permission> permissionList, boolean isLocked, IEncryption encryption, Chip chip, String password) {
-        VisitorIDCard idCard = new VisitorIDCard(id, validFrom, validUntil, irisStructure, permissionList, isLocked, encryption, chip, password, visitor);
-        visitorList.put(visitor, idCard);
-        return idCard;
+    public ReceptionStaff getReceptionStaff() {
+        return receptionStaff;
     }
 
-    public void lock(Visitor visitor) {
-        IDCard card = visitorList.get(visitor);
-        card.setLocked(true);
-    }
-
-    public void lock(IDCard idcard) {
-        idcard.setLocked(true);
+    public void setReceptionStaff(ReceptionStaff receptionStaff) {
+        this.receptionStaff = receptionStaff;
     }
 }

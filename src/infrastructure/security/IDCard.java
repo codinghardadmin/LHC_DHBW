@@ -22,6 +22,8 @@ public abstract class IDCard {
         this.encryption = encryption;
     }
 
+    public IDCard(){}
+
     public void setValidFrom(Date validFrom) {
         this.validFrom = validFrom;
     }

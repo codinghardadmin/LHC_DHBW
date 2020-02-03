@@ -2,18 +2,19 @@ package infrastructure.security;
 
 import human_resources.Employee;
 import human_resources.IROEmployee;
+import infrastructure.management.SecurityStaff;
 
 public enum SecurityCentre {
     instance;
 
     private IROEmployee employee;
+    private SecurityStaff staff = new SecurityStaff();
 
-    public NewEmployeeIDCard create(Employee employee) {
-
-        return null;
+    public SecurityStaff getSecurityStaff() {
+        return this.staff;
     }
 
-    public void lock(NewEmployeeIDCard newCard) {
-        //newCard.setLocked(true);
+    public void setSecurityStaff(SecurityStaff staff) {
+        this.staff = staff;
     }
 }

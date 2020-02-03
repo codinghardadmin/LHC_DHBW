@@ -2,8 +2,6 @@ package infrastructure.management;
 
 import com.google.common.eventbus.EventBus;
 
-import java.util.concurrent.Flow;
-
 public enum ControlCenter {
     instance;
 
@@ -23,14 +21,13 @@ public enum ControlCenter {
     public void startExperiment(ExperimentScope scope) {
         if (scope == ExperimentScope.ESFull) {
             eventBus.post(new RunExperimentFull());
-            eventBus.post(new RunExperimentPartial());
             eventBus.post(new Analyse());
         } else if (scope == ExperimentScope.ES20) {
-
+            eventBus.post(new RunExperimentPartial(scope));
         } else if (scope == ExperimentScope.ES10) {
-
+            eventBus.post(new RunExperimentPartial(scope));
         } else if (scope == ExperimentScope.ES5) {
-
+            eventBus.post(new RunExperimentPartial(scope));
         }
     }
 

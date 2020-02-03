@@ -2,10 +2,7 @@ package lhc;
 
 import com.google.common.eventbus.Subscribe;
 import infrastructure.experiment.Experiment;
-import infrastructure.management.Analyse;
-import infrastructure.management.RunExperimentFull;
-import infrastructure.management.RunExperimentPartial;
-import infrastructure.management.Subscriber;
+import infrastructure.management.*;
 
 public class Ring extends Subscriber {
 
@@ -64,8 +61,15 @@ public class Ring extends Subscriber {
     }
 
     @Subscribe
-    public void receive(RunExperimentPartial experimentPartial) {
-
+    public void receive(RunExperimentPartial experimentPartial, ExperimentScope scope) {
+        int number = 0;
+        if (scope == ExperimentScope.ES5) {
+            number = 5;
+        } else if (scope == ExperimentScope.ES10) {
+            number = 10;
+        } else if (scope == ExperimentScope.ES20) {
+            number = 20;
+        }
     }
 
 }

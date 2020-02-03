@@ -13,4 +13,20 @@ public class NewEmployeeIDCard extends IDCard {
         this.chip1 = chip1;
         this.chip2 = chip2;
     }
+
+    public Chip getChip1() {
+        return chip1;
+    }
+
+    public void setChip1(Chip chip1) {
+        this.chip1 = chip1;
+    }
+
+    public Chip getChip2() {
+        return chip2;
+    }
+
+    public void setChip2(Chip chip2) {
+        this.chip2 = chip2;
+    }
 }

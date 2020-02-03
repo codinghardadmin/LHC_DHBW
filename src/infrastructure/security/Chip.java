@@ -8,6 +8,10 @@ public class Chip {
         this.password = password;
     }
 
+    public Chip() {
+        password = "helloLHC2020";
+    }
+
     void setPassword(String password) {
         this.password = password;
     }

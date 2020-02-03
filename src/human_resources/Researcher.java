@@ -1,13 +1,15 @@
 package human_resources;
 
+import lhc.Detector;
 import lhc.IRODetector;
 
 public class Researcher extends Employee {
 
-    public Researcher(boolean isSenior, IRODetector detector, int id, String name, int[][] iris) {
+    public Researcher(boolean isSenior, Detector detector, int id, String name, int[][] iris) {
         super(id, name, iris);
         this.isSenior = isSenior;
         this.detector = detector;
+
     }
 
     private boolean isSenior;

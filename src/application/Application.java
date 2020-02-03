@@ -1,41 +1,97 @@
 package application;
 
-import human_resources.Visitor;
-import infrastructure.management.Reception;
-import infrastructure.security.VisitorIDCard;
+import human_resources.*;
+import infrastructure.experiment.Experiment;
+import infrastructure.management.*;
+import infrastructure.security.*;
+import lhc.Detector;
+
+import java.io.IOException;
+import java.util.LinkedList;
 
 public class Application {
-    public static void main(String[] args) {
-        /*
+    public static void main(String[] args) throws IOException {
+
         // Erstellung einer ID-Karte für Besucher durch die Rezeption
-        Visitor visitor = new Visitor(0, "Name", new int[10][10]);
-        VisitorIDCard card = Reception.instance.create(visitor, null, null, null, null, null, false, null, null, null);
+        Visitor visitor = new Visitor(0, "Visitor", new IrisScanner().scanIris());
+        VisitorIDCard card = Reception.instance.getReceptionStaff().createBlankCard();
+        TouchpadScanner reader = new TouchpadScanner();
+        reader.setEnteredPassword("123456"); // Hier wird das Passwort eingegeben (simuliert)
+        String enteredPW = reader.getEnteredPassword();
+        Reception.instance.getReceptionStaff().create(card, visitor, enteredPW);
+        System.out.println("VisitorCard: " + card.toString());
+
 
         // Erstellung einer ID-Karte für Mitarbeiter durch Security
         Employee employee;
-        employee = new SecurityOfficer(false, 1, null, new int[10][10]);
-        NewEmployeeIDCard newCard = SecurityCentre.instance.create(employee);
+        employee = new SecurityOfficer(false, 1, "Officer 1", new IrisScanner().scanIris());
+        NewEmployeeIDCard newCard = SecurityCentre.instance.getSecurityStaff().create(employee);
+        System.out.println("EmployeeCard: " + newCard.toString());
+
 
         // Reader prüft Zutritt für einen Besucher
         String enteredPassword1 = "test";
-        IReader reader1 = new CardReader();
+        TouchpadScanner scanner1 = new TouchpadScanner();
+        scanner1.setEnteredPassword(enteredPassword1); // Hier wird das Passwort eingegeben (simuliert)
+        String enteredPW1 = scanner1.getEnteredPassword();
+        Reader reader1 = new Reader();
+        boolean access = reader1.insertCard(card, new Slot(), enteredPassword1);
+        System.out.println("Zutritt Besucher: " + access);
+
 
         // Reader prüft Zutritt für einen Mitarbeiter
         String enteredPassword2 = "test";
-        IReader reader2 = new CardReader();
+        TouchpadScanner scanner2 = new TouchpadScanner();
+        scanner2.setEnteredPassword(enteredPassword2); // Hier wird das Passwort eingegeben (simuliert)
+        String enteredPW2 = scanner2.getEnteredPassword();
+        Reader reader2 = new Reader();
+        boolean access2 = reader2.insertCard(card, new RFID(), enteredPassword2);
+        System.out.println("Zutritt Mitarbeiter: " + access2);
+
 
         // Forscher greift lesend auf die im Detektor gespeicherten Experimente zu
         Detector detector = new Detector();
-        Employee researcher = new Researcher(false, detector, 2, null, new int[10][10]);
+        Researcher researcher = new Researcher(false, detector, 2, null, new int[10][10]);
+        LinkedList<Experiment> experimentList = researcher.getDetector().getExperimentList();
+        System.out.println("ExperimentListSize: " + experimentList.size());
+
 
         // HRAssistant hat lesenden Zugriff auf die Daten der Mitarbeiter
-        HumanResourcesDepartment hrassistant = new HRAssistant(null);
+        HRAssistant assistant = new HRAssistant("Assistant");
+        assistant.setEmployeeToRead(employee);
+        IROEmployee readOnlyEmployee = assistant.readEmployee();
+        System.out.print("isHasBudgetResponsibility: ");
+        System.out.println(readOnlyEmployee.isHasBudgetResponsibility());
+        System.out.print("isManager: ");
+        System.out.println(readOnlyEmployee.isManager());
+        System.out.print("isMentor: ");
+        System.out.println(readOnlyEmployee.isMentor());
+
 
         // Security Centre sperrt eine ID-Karte
-        SecurityCentre.instance.lock(newCard);
-        */
+        SecurityCentre.instance.getSecurityStaff().lock(newCard);
+        boolean isLocked = newCard.isLocked();
+        System.out.println("isLocked: " + isLocked);
 
 
+        // WEITERE TESTS
+        // WEITERE TESTS
+        // WEITERE TESTS
+
+
+        // Testen der SuchAlgorithmen (in Configuration ändern)
+        // Starten des LHC und Analyse
+        ControlCenter.instance.startExperiment(ExperimentScope.ESFull);
+
+
+
+        /**
+         *
+         * UNWICHTIG
+         * UNWICHTIG
+         * UNWICHTIG
+         *
+         */
 
         /*
         (i)
@@ -89,10 +145,5 @@ public class Application {
         Die Rollen HRHOD und HRConsultant haben schreibenden, der HRAssistant
         lesenden Zugriff aufdie Daten der Mitarbeiter.
          */
-
-        // Erstellung einer ID-Karte für Besucher durch die Rezeption
-        Visitor visitor = new Visitor(0, "Name", new int[10][10]);
-        VisitorIDCard card = Reception.instance.create(visitor, null, null, null, null, null, false, null, null, null);
-
     }
 }
