@@ -74,8 +74,8 @@ public enum IDCardManagement {
     }
 
     public boolean checkPassword(VisitorIDCard card, String password) {
-        String cardpw = card.getChip().getPassword();
-        if (new AESEncryption().encrypt(password).equals(cardpw)) {
+        String cardPW = card.getChip().getPassword();
+        if (new AESEncryption().encrypt(password).equals(cardPW)) {
             return true;
         }
         return false;

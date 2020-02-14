@@ -5,6 +5,8 @@ import infrastructure.experiment.Experiment;
 import infrastructure.management.*;
 import infrastructure.security.*;
 import lhc.Detector;
+import lhc.ProtonTrap;
+import lhc.Ring;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -81,7 +83,13 @@ public class Application {
 
         // Testen der SuchAlgorithmen (in Configuration ändern)
         // Starten des LHC und Analyse
+        Detector collDetector = new Detector();
+        ProtonTrap[] traps = new ProtonTrap[2];
+        Ring ring = new Ring(traps, collDetector);
+
         ControlCenter.instance.startExperiment(ExperimentScope.ESFull);
+
+        System.out.println("Started Experiment");
 
 
 

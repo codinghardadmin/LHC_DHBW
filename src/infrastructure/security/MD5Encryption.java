@@ -25,11 +25,11 @@ public class MD5Encryption implements IEncryption {
 
     @Override
     public String encrypt(String text) {
-        return null;
+        return "";
     }
 
     @Override
     public String decrypt(String text) {
-        return null;
+        return "";
     }
 }
